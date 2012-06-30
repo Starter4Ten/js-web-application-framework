@@ -6,6 +6,26 @@
 <head>
 
 <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    
+    function fetchColours() {
+        $.get('${pageContext.request.contextPath}/signup/colours', function (data, textStatus) {
+            $('#colours').empty();
+            for (var i = 0; i < data.length; i++) {
+                $('#colours').append('<label class="radio"><input type="radio" name="colours" value="' + data[i] + '">' + data[i] + '</input>');
+            }
+            $('#colours').addClass('_loaded');
+         },
+         'json'
+       );
+    }
+    window.setTimeout(fetchColours, 1000);
+    
+});
+</script>
 </head>
 <body style="margin-top: 40px;">
 
@@ -31,6 +51,12 @@
             <label for="name" class="control-label">Real Name</label>
             <div class="controls">
                 <form:input path="name" title="Real Name" type="text" required="required" autocomplete="off" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="name" class="control-label">Favourite Colour</label>
+            <div id="colours" class="controls">
+                Loading...
             </div>
         </div>
     </fieldset>

@@ -6,6 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.starter4ten.controllers.SignupForm;
 
@@ -17,6 +18,12 @@ public class RegistrationController {
     public String load(Model model) {
         model.addAttribute(new SignupForm());
         return "signup";
+    }
+    
+    @ResponseBody
+    @RequestMapping(value="/colours", method=RequestMethod.GET)
+    public String colours() {
+        return "[\"red\",\"green\",\"blue\", \"yellow\", \"orange\", \"pink\"]";
     }
     
     @RequestMapping(method=RequestMethod.POST)
