@@ -11,7 +11,7 @@
   </div>
 </div>
     <div class="container">
-      <h2> ${signupForm.name} your sign Up is complete. Thank you for your registration.</h2>
+      <h2> ${signupForm.name} your sign up is complete. Thank you for your registration.</h2>
     </div>
 </body>
 </html>
