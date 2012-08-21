@@ -78,7 +78,7 @@ $(document).ready(function() {
     </fieldset>
     <div class="form-actions">
         <button id="submit" type="submit" class="btn btn-primary">Sign Up</button>
-        <button type="reset" class="btn">Cancel</button>     
+        <button id="reset" type="reset" class="btn">Cancel</button>     
     </div>
     </form:form>
 </div>
